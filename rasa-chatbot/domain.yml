@@ -1,0 +1,188 @@
+version: "3.1"
+
+intents:
+  - greet
+  - thank
+  - affirm
+  - deny
+  - bot_challenge
+  - ask_store_hours
+  - buy_in_general
+  - ask_payment_methods
+  - ask_delivery_process
+  - ask_store_location
+  - request_glass_price_form
+  - cancel_compute
+  - buy_alum
+  - ask_series_difference
+  - ask_product_type_difference
+  - buy_glass
+  - glass_entities
+  - ask_for_recommendation
+  - recommendation_entities
+  - ask_glass_thickness
+  - ask_glass_types
+
+entities:
+  - glass_material
+  - glass_type
+  - glass_thickness
+  - glass_dimension
+  - qty
+  - product
+  - product_type
+  - budget
+
+slots:
+  glass_material:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: glass_material
+        conditions:
+          - active_loop: glass_price_form
+            requested_slot: glass_material
+  glass_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: glass_type
+        conditions:
+          - active_loop: glass_price_form
+            requested_slot: glass_type
+  glass_thickness:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: glass_thickness
+        conditions:
+          - active_loop: glass_price_form
+            requested_slot: glass_thickness
+  glass_dimension:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: glass_dimension
+        conditions:
+          - active_loop: glass_price_form
+            requested_slot: glass_dimension
+  qty:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: qty
+        conditions:
+          - active_loop: glass_price_form
+            requested_slot: qty
+  product:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: product
+        conditions:
+          - active_loop: recommend_form
+            requested_slot: product
+  product_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: product_type
+        conditions:
+          - active_loop: recommend_form
+            requested_slot: product_type
+  budget:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: budget
+        conditions:
+          - active_loop: recommend_form
+            requested_slot: budget
+
+forms:
+  glass_price_form:
+    required_slots:
+      - glass_material
+      - glass_type
+      - glass_thickness
+      - glass_dimension
+      - qty
+  recommend_form:
+    required_slots:
+      - product
+      - product_type
+      - budget
+
+responses:
+  utter_greet:
+    - text: "How can I help you?"
+    - text: "How can I help?"
+  utter_welcome:
+    - text: "You're welcome!"
+    - text: "Anytime!"
+  utter_iamabot:
+    - text: "I am a customer service bot on duty!"
+  utter_ok:
+    - text: "Okay."
+
+  utter_store_hours:
+    - text: "We are open starting at 8am up to 5pm, Mondays to Saturdays."
+    - text: "The store opens at 8am in the morning until 5pm (Mon-Sat)."
+    - text: "We are open from 8am until 5pm (Mon-Sat)."
+  utter_services_offered:
+    - text: "We can supply you with your glass and aluminum needs."
+  utter_payment_methods:
+    - text: "We accept bank transfer. Cash on delivery will be allowed after an onsite consultation in the branch."
+  utter_delivery_process:
+    - text: "We deliver our hardware materials to the customer's place after a down payment of 40% has been achieved."
+  utter_store_location:
+    - text: "We have a branch in Imus Cavite (opposite side of Medical Center Imus) and in Brgy Daang Amaya, Tanza Cavite."
+  utter_alum:
+    - text: "We have different aluminum materials specifically series 798, series 38, and type EDs. You can check the available materials and  its prices in the aluminum section of this website."
+  utter_series_difference:
+    - text: "Series 798 are alumnimun parts typically used for sliding type (windows and doors), and series 38 are for awning type of windows."
+  utter_product_type_difference:
+    - text: "Awning type refers to products that have the motion of swinging when opening and closing, while a sliding type refers to products that slide through a railing."
+  utter_glass_thickness:
+    - text: "We have a 1/8 which is the thinnest type and 1/4 being the thickest."
+  utter_glass_types:
+    - text: "We have a clear, smoke, bronze, mirror, blue, and reflective types."
+    - text: "You can choose between an ordinary or tempered material, as well as types such as clear, smoke, etc."
+
+  utter_ask_glass_material:
+    - text: "What material of glass do you need? We have ordinary and tempered glasses."
+  utter_ask_glass_type:
+    - text: "What type? We offer clear/blue/smoke/bronze/mirror/reflective glasses."
+    - text: "What type of glass? You can choose from the following: clear/blue/smoke/bronze/mirror/reflective glasses."
+  utter_ask_glass_thickness:
+    - text: "What thickness? We have 1/8, 3/16, and 1/4 available."
+  utter_ask_glass_dimension:
+    - text: "What is the height and width? (ex: 4 x 6)"
+  utter_ask_qty:
+    - text: "How many?"
+
+  utter_ask_product:
+    - text: "What do you want to build? (door/window)"
+  utter_ask_product_type:
+    - text: "What type of {product}? You can choose between sliding and awning."
+  utter_ask_budget:
+    - text: "What is your estimated budget? So we can consider it as well. (low/mid/high)"
+
+actions:
+  - validate_glass_price_form
+  - action_compute_glass_price_form
+  - validate_recommend_form
+  - action_recommend_form
+  - action_reset_slots
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

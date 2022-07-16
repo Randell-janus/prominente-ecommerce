@@ -1,0 +1,22 @@
+version: "3.1"
+
+stories:
+  - story: User says stop asking on compute form
+    steps:
+      - intent: buy_glass
+      - action: glass_price_form
+      - active_loop: glass_price_form
+      - intent: cancel_compute
+      - action: action_reset_slots
+      - action: action_deactivate_loop
+      - active_loop: null
+
+  - story: User says stop asking on recommend form
+    steps:
+      - intent: ask_for_recommendation
+      - action: recommend_form
+      - active_loop: recommend_form
+      - intent: cancel_compute
+      - action: action_reset_slots
+      - action: action_deactivate_loop
+      - active_loop: null

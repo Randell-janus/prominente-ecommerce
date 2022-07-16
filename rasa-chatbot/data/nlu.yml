@@ -1,0 +1,202 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - kamusta
+      - i need help 
+      - can you help me
+      - anyone there
+      - huy
+
+  - intent: thank
+    examples: |
+      - thanks
+      - thank you
+      - tysm
+
+  - intent: ask_store_hours
+    examples: |
+      - what time does the store open?
+      - when do you open?
+      - what time do you start to operate?
+      - what time do you open?
+      - when is the store open?
+      - opening hours
+      - when is the store available?
+      - what time does the store close?
+      - what is the closing time?
+      - closing hours
+      - when is the store close?
+
+  - intent: buy_in_general
+    examples: |
+      - what services do you offer
+      - what can i buy
+      - what are your products
+      - what do you have
+
+  - intent: ask_payment_methods
+    examples: |
+      - what payment methods do you accept
+      - how do you accept payment
+      - do you accept gcash
+      - do you allow paymaya
+      - do you allow bank transfer
+      - do you have cash on delivery
+
+  - intent: ask_delivery_process
+    examples: |
+      - do you do delivery
+      - can you deliver to my house
+      - will you deliver the products to my house
+      - do you deliver the products
+
+  - intent: ask_store_location
+    examples: |
+      - where are you located
+      - do you have branches outside cavite?
+      - where can we find your store
+      - where is your shop located?
+
+  - intent: buy_alum
+    examples: |
+      - aluminum for my door
+      - how much are aluminums
+      - aluminum material
+      - i'll buy an aluminum
+
+  - intent: ask_series_difference
+    examples: |
+      - difference between series 798 and series 38?
+      - what is the 798 and 38
+      - what does series 798 and series 38 mean
+
+  - intent: ask_product_type_difference
+    examples: |
+      - difference between awning and sliding?
+      - what is sliding and awning
+
+  - intent: glass_entities
+    examples: |
+      - [ordinary](glass_material) [clear](glass_type)
+      - [tempered](glass_material) [smoke](glass_type)
+      - [bronze](glass_type)
+      - [tempered](glass_material) [mirror](glass_type)
+      - [reflective](glass_type)
+      - [blue](glass_type)
+      - [ordinary](glass_material) [mirror](glass_type)
+      - [tempered](glass_material) [clear](glass_type)
+      - [tempered](glass_material) [blue](glass_type)
+      - [1/8](glass_thickness)
+      - [3/16](glass_thickness)
+      - [1/4](glass_thickness)
+      - [4x6](glass_dimension)
+      - [2 x 3](glass_dimension)
+      - i will get a [8X9](glass_dimension)
+      - i'll be getting a [3 X 9](glass_dimension)
+      - ill have a [9x11](glass_dimension)
+      - how much would [12 x 15](glass_dimension) be
+      - i'll be needing a [9x 15](glass_dimension)
+      - the dimensions are [3 x7](glass_dimension)
+      - it is [12 X6](glass_dimension)
+      - i need a [5X 8](glass_dimension)
+      - [1.2x2.2](glass_dimension)
+      - [10.5X12.2](glass_dimension)
+      - [10x8](glass_dimension)
+      - [1](qty) piece
+      - about [9](qty) pieces
+      - i need [12](qty)
+      - i will get [20](qty)
+
+  - intent: buy_glass
+    examples: |
+      - compute
+      - canvass
+      - compute price
+      - calculate price
+      - can you help me compute the pricing
+      - i want to canvass for a glass
+      - assist me with glass pricing
+      - compute the price for me
+
+  - intent: recommendation_entities
+    examples: |
+      - [door](product)
+      - need a [door](product)
+      - building a [door](product)
+      - building a [window](product)
+      - how about a [window](product)
+      - how about a [door](product)
+      - [sliding](product_type)
+      - a [sliding](product_type) type
+      - [awning](product_type)
+      - an [awning](product_type) type
+      - need a [sliding](product_type)
+      - building a [awning](product_type)
+      - building a [sliding](product_type)
+      - how about a [awning](product_type)
+      - how about a [sliding](product_type)
+      - my budget is [low](budget)
+      - about [mid](budget) range
+      - i have a [high](budget) budget
+
+  - intent: ask_for_recommendation
+    examples: |
+      - recommend 
+      - recommended
+      - recommendation
+      - can you recommend me some materials
+      - can you recommend some materials
+      - recommend me materials that i need
+      - can you help me with the materials
+
+  - intent: ask_glass_thickness
+    examples: |
+      - what's the thickest glass
+      - what is the thinnest glass
+      - thin glass
+      - thick glass
+
+  - intent: ask_glass_types
+    examples: |
+      - what are the different glass types
+      - tell me the types of glasses that i can buy
+      - tell me the types of glass that you offer
+      - what are the types of glass that you have
+      - what are the available glasses
+      - what glass do you offer
+      - what are the glass that you offer
+      - what are the available glass materials
+      - what materials are the glass made of
+
+  - intent: cancel_compute
+    examples: |
+      - not interested anymore
+      - lets talk about other things instead
+      - don't want to buy anymore
+      - not buying anymore
+      - do not ask me now
+      - i'm cancelling
+      - dont ask me now
+      - stop asking me
+      - i change my mind
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?

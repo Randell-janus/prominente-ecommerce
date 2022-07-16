@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-sm lg:text-base;
+    @apply bg-slate-100;
+    @apply font-poppins !important;
+    /* @apply font-mono !important */
+  }
+
+  h1 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h2 {
+    @apply text-lg lg:text-xl;
+  }
+
+  h3 {
+    @apply text-base lg:text-lg;
+  }
+}
+
+@layer components {
+  .btn-primary-filled {
+    @apply px-3 py-2 rounded-md w-full bg-slate-900 text-white font-medium;
+    @apply hover:bg-slate-700 active:bg-slate-800 transition ease-out duration-100;
+  }
+
+  .btn-boolean {
+    @apply px-3 py-1 rounded-md bg-slate-900 text-white font-medium;
+    @apply hover:bg-slate-700 active:bg-slate-800 transition ease-out duration-100;
+  }
+
+  .auth-form-input {
+    @apply rounded;
+    @apply border border-slate-200;
+    @apply focus:outline-none focus:ring-0 focus:border-teal-400 focus:z-10;
+  }
+
+  .btn-scale {
+    @apply hover:scale-110 active:scale-95 transition-all;
+  }
+
+  .icon-btn {
+    @apply h-5 w-5 sm:h-7 sm:w-7;
+  }
+
+  .table-icon-btn {
+    @apply h-5 w-5 sm:h-6 sm:w-6 text-slate-500;
+  }
+
+  .add-products-btn {
+    @apply font-semibold rounded-full bg-teal-400;
+    @apply px-5 py-2 rounded-full bg-teal-500;
+    @apply text-xs lg:text-sm hover:bg-teal-300 active:scale-105 transition-all;
+  }
+
+  .select-box {
+    @apply border-slate-200 rounded-md cursor-pointer;
+    @apply transition-all w-full;
+    @apply focus:ring-2 focus:ring-teal-400 focus:border-none;
+  }
+
+  .input-outline {
+    @apply rounded-md w-full italic border-slate-200;
+    @apply focus:ring-2 focus:ring-teal-400 focus:border-none;
+    @apply transition-all;
+  }
+
+  .td-actions-container {
+    @apply flex items-center space-x-2 lg:space-x-4;
+  }
+}
+@layer utilities {
+  .page-width-container {
+    @apply max-w-[90rem] mx-auto px-4 sm:px-12;
+  }
+
+  .page-height-container {
+    @apply min-h-screen;
+  }
+}
+
+.sidebar {
+  @apply fixed inset-0 duration-200 z-30 w-full sm:w-72;
+  @apply bg-white lg:hidden py-40 px-10;
+}
+
+.active-nav {
+  @apply transition-all border-teal-400;
+}
+
+.default-nav {
+  @apply transition-all font-semibold;
+}
+
+.overflow-scrollbar::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+.overflow-thumb::-webkit-scrollbar-thumb {
+  @apply bg-teal-400 hover:bg-teal-500;
+}
+.overflow-track::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+.overflow-corner::-webkit-scrollbar-corner {
+  @apply bg-slate-100;
+}
+
+.modal-scrollbar {
+  @apply overflow-scrollbar overflow-thumb overflow-track overflow-corner;
+}

@@ -1,0 +1,99 @@
+version: "3.1"
+
+rules:
+  - rule: thanks_welcome
+    steps:
+      - intent: thank
+      - action: utter_welcome
+
+  - rule: User greets
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Say store operating hours
+    steps:
+      - intent: ask_store_hours
+      - action: utter_store_hours
+
+  - rule: Say services offered
+    steps:
+      - intent: buy_in_general
+      - action: utter_services_offered
+
+  - rule: Say accepted payment methods
+    steps:
+      - intent: ask_payment_methods
+      - action: utter_payment_methods
+
+  - rule: Say delivery process
+    steps:
+      - intent: ask_delivery_process
+      - action: utter_delivery_process
+
+  - rule: Say store location
+    steps:
+      - intent: ask_store_location
+      - action: utter_store_location
+
+  - rule: Say aluminum products
+    steps:
+      - intent: buy_alum
+      - action: utter_alum
+
+  - rule: Say series difference
+    steps:
+      - intent: ask_series_difference
+      - action: utter_series_difference
+
+  - rule: Say product types difference
+    steps:
+      - intent: ask_product_type_difference
+      - action: utter_product_type_difference
+
+  - rule: Say thinnest and thickest glass
+    steps:
+      - intent: ask_glass_thickness
+      - action: utter_glass_thickness
+
+  - rule: Say glass types
+    steps:
+      - intent: ask_glass_types
+      - action: utter_glass_types
+
+  - rule: Activate Glass Price Form
+    steps:
+      - intent: buy_glass
+      - action: glass_price_form
+      - active_loop: glass_price_form
+
+  - rule: Submit Glass Price Form
+    condition:
+      - active_loop: glass_price_form
+    steps:
+      - action: glass_price_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_compute_glass_price_form
+
+  - rule: Activate Recommend Form
+    steps:
+      - intent: ask_for_recommendation
+      - action: recommend_form
+      - active_loop: recommend_form
+
+  - rule: Submit Recommend Form
+    condition:
+      - active_loop: recommend_form
+    steps:
+      - action: recommend_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_recommend_form
