@@ -35,7 +35,7 @@ function Login({ authContext }) {
         <FormLayout>
           <FormHeading
             header="Sign in to your account"
-            subheader="So we can bring you the elements of style!"
+            subheader="So we can provide you with your hardware needs!"
           />
           <FormControl onSubmit={handleLogin}>
             <FormInput

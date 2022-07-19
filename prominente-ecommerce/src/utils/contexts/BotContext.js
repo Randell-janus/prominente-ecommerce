@@ -53,7 +53,7 @@ export const BotProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // rasaAPI("user", "/restart");
+    rasaAPI("user", "/restart");
   }, []);
 
   //   useEffect(() => {

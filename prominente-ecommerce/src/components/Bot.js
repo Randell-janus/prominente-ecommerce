@@ -97,14 +97,13 @@ export default function Bot() {
 
         <form
           className="flex p-4 bg-slate-100 rounded-b-md"
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <input
             onChange={(e) => setInputMessage(e.target.value)}
             value={inputMessage}
             type="text"
-            placeholder="Chatbot currently disabled"
-            // placeholder="Type a message..."
+            placeholder="Type a message..."
             className="bg-slate-100 w-10/12 border-transparent focus:outline-none focus:ring-0 focus:border-transparent"
           />
           <div className="flex-1 flex items-center justify-center">

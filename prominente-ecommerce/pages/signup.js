@@ -41,7 +41,7 @@ function SignUp({ authContext }) {
         <FormLayout>
           <FormHeading
             header="Sign up for an account"
-            subheader="So we can bring you the elements of style!"
+            subheader="So we can provide you with your hardware needs!"
           />
           <FormControl onSubmit={handleSignup}>
             <FormInput
