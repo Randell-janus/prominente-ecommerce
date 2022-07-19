@@ -17,19 +17,23 @@ This is a three-part project consisting of an e-commerce website, content manage
   - Forgot password
   - Protected pages with private routes
   - Re-authentication on email update
-- Profile page
+- Manage profile
   - Update personal information (name, address, contact)
   - Update account settings (email, password)
-- Add to cart
+- Add items to cart
   - Add/remove items
   - Update item quantity
-- Checkout
+- Checkout items
   - Checkout restriction with incomplete account info
   - Categorized orders (pending, to receive, received, cancelled)
 - Notification system
   - Notify on account info update
   - Notify on order status update
   - Mark notifications as read
+- AI chatbot assistant
+  - Computes glass pricing base on user input
+  - Recommends appropriate materials base on user input
+  - Answers basic questions about the business
 
 ### Content Management System
 
@@ -40,9 +44,38 @@ This is a three-part project consisting of an e-commerce website, content manage
 - Update status of orders (pending, confirmed, unapproved, delivered)
 - Daily total income and product sales tracking
 
-### Rasa Chatbot Assistant
+## Snapshots
 
-- Computes glass price
-  - material, type, thickness, dimension, qty
-- Recommends appropriate materials according to user preference
-  - type,
+### E-commerce Website
+
+- Home page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/home.png)
+- Auth page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/auth.png)
+- Cart page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/cart.png)
+- Profile page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/profile.png)
+- Notifications
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/notifications.png)
+- Orders
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-ecommerce/public/snapshots/received.png)
+- Chatbot basic chat
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/rasa-chatbot/public/snapshots/rasa-basic-chat.png)
+- Chatbot compute glass price
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/rasa-chatbot/public/snapshots/rasa-compute-price.png)
+- Chatbot recommend materials
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/rasa-chatbot/public/snapshots/rasa-recommend-materials.png)
+
+### Content Management System
+
+- Users page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-cms/public/snapshots/cms-users.png)
+- Orders page
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-cms/public/snapshots/cms-orders.png)
+- Order modal
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-cms/public/snapshots/cms-order.png)
+- Products/inventory management
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-cms/public/snapshots/cms-products.png)
+- Sales/income tracking
+  - ![](https://github.com/Randell-janus/prominente-ecommerce/blob/main/prominente-cms/public/snapshots/cms-sales.png)
